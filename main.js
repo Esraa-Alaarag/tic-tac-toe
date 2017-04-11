@@ -1,17 +1,11 @@
-
 let flag=false;
-
+let counter=0;
+let winner=false;
 window.onload = function() {
 // attach the button to the click even
-	$('#b1').on('click', writevalue);
-	$('#b2').on('click', writevalue);
-	$('#b3').on('click', writevalue);
-	$('#b4').on('click', writevalue);
-	$('#b5').on('click', writevalue);
-	$('#b6').on('click', writevalue);
-	$('#b7').on('click', writevalue);
-	$('#b8').on('click', writevalue);
-	$('#b9').on('click', writevalue);
+for(let i=0 ;i<9;i++){
+	$(".column button").eq(i).on('click', writevalue);
+}
 
 // click event with anonymous function to start X first
 	$('#Xstart').on('click', function(){
@@ -28,6 +22,8 @@ window.onload = function() {
 	$('.column button').text('');
 	$('.column button').val('');
 	location.reload(true);
+	counter++;
+	winner=false;
 	});
 }
 
@@ -43,6 +39,7 @@ function  writevalue(){
 			// disable the button so the user can't change his mind
 			$(this).attr("disabled","disabled");
 			$(this).css('color', 'red');
+			counter++;
 		}
 		else
 		{
@@ -52,12 +49,21 @@ function  writevalue(){
 			// disable the button so the user can't change his mind
 			$(this).attr("disabled","disabled");
 			$(this).css('color', 'blue');
+			counter++;
 		}
 		// checkup to see if we have a winner
-		if(finishgame('X'))
+		if(finishgame('X')){
 			$('.result').text("X Wins");
-		if(finishgame('O'))
+			winner=true;
+
+		}
+		if(finishgame('O')){
 			$('.result').text("O Wins");
+			winner=true;
+		}
+		if(counter===9 && winner===false)
+			$('.result').text("It's a tie");
+
 
 	
 }
