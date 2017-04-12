@@ -1,3 +1,4 @@
+
 let flag=false;
 let counter=0;
 let winner=false;
@@ -73,63 +74,69 @@ function  writevalue(){
 function finishgame(val){
 
 if($('#b1').val()==val && $('#b2').val()==val && $('#b3').val()==val){	
-	$('#b1').css('background', 'yellow');
-	$('#b2').css('background', 'yellow');
-	$('#b3').css('background', 'yellow');
+	coloring('#b1');
+	coloring('#b2');
+	coloring('#b3');
 	$(".column button").attr("disabled", "disabled");
 	return true;
 }
 
 else if ($('#b4').val()==val && $('#b5').val()==val && $('#b6').val()==val){
-	$('#b4').css('background', 'yellow');
-	$('#b5').css('background', 'yellow');
-	$('#b6').css('background', 'yellow');
+	coloring('#b4');
+	coloring('#b5');
+	coloring('#b6');
 	$(".column button").attr("disabled", "disabled");
 	return true;
 }
 else if($('#b7').val()==val && $('#b8').val()==val && $('#b9').val()==val){
-	$('#b7').css('background', 'yellow');
-	$('#b8').css('background', 'yellow');
-	$('#b9').css('background', 'yellow');
+	coloring('#b7');
+	coloring('#b8');
+	coloring('#b9');
 	$(".column button").attr("disabled", "disabled");
 	return true;
 }
 else if($('#b1').val()==val && $('#b4').val()==val && $('#b7').val()==val){
-	$('#b1').css('background', 'yellow');
-	$('#b4').css('background', 'yellow');
-	$('#b7').css('background', 'yellow');
+	coloring('#b1');
+	coloring('#b4');
+	coloring('#b7');
 	$(".column button").attr("disabled", "disabled");
 	return true;
 }
 else if($('#b2').val()==val && $('#b5').val()==val && $('#b8').val()==val){
-	$('#b2').css('background', 'yellow');
-	$('#b5').css('background', 'yellow');
-	$('#b8').css('background', 'yellow');
+	coloring('#b2');
+	coloring('#b5');
+	coloring('#b8');
 	$(".column button").attr("disabled", "disabled");
 	return true;
 }
 else if($('#b3').val()==val && $('#b6').val()==val && $('#b9').val()==val){
-	$('#b3').css('background', 'yellow');
-	$('#b6').css('background', 'yellow');
-	$('#b9').css('background', 'yellow');
+	coloring('#b3');
+	coloring('#b6');
+	coloring('#b9');
 	$(".column button").attr("disabled", "disabled");
 	return true;
 }
 else if($('#b1').val()==val && $('#b5').val()==val && $('#b9').val()==val){
-	$('#b1').css('background', 'yellow');
-	$('#b5').css('background', 'yellow');
-	$('#b9').css('background', 'yellow');
+	coloring('#b1');
+	coloring('#b5');
+	coloring('#b9');
 	$(".column button").attr("disabled", "disabled");
 	return true;
 }
 else if($('#b3').val()==val && $('#b5').val()==val && $('#b7').val()==val){
-	$('#b3').css('background', 'yellow');
-	$('#b5').css('background', 'yellow');
-	$('#b7').css('background', 'yellow');
+	coloring('#b3');
+	coloring('#b5');
+	coloring('#b7');
 	$(".column button").attr("disabled", "disabled");
 	return true;
 }
 // if no winner return false
 else 
 	return false;
+}
+
+// function to color the cell when winning
+function coloring(id){
+	$(id).css('background', 'yellow');
+	
 }
